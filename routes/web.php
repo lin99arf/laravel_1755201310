@@ -27,3 +27,12 @@ Route::put('/mhs/update/{mahasiswa:nim}', 'MahasiswaController@update')->name('m
 Route::get('/mhs/delete/{mahasiswa:nim}', 'MahasiswaController@destroy')->name('mhs.delete');
 
 Route::resource('/prodi', 'ProdiController');
+
+Route::get('/', 'MataKuliahController@index');
+Route::get('/mk', 'MatakuliahController@index')->name('mk.index');
+Route::get('/mk/list', 'MatakuliahController@mk_list')->name('mk.list');
+Route::get('/mk/create', 'MatakuliahController@create');
+Route::post('/mk/store', 'MatakuliahController@store');
+Route::get('/mk/edit/{kode_matakuliah}', 'MatakuliahController@edit');
+Route::put('/mk/update/{matakuliah:kode_matakuliah}', 'MatakuliahController@update')->name('mk.update');
+Route::get('/mk/delete/{matakuliah:kode_matakuliah}', 'MatakuliahController@destroy')->name('mk.delete');
